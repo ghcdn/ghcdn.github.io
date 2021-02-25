@@ -11,21 +11,8 @@
         <video id="video"  width=80% height="500" controls></video>
         <script>
         var video = document.getElementById('video');
-        var videoSrc = 'http://p.ananas.chaoxing.com/star3/origin/6d2d57f46d34ccb97547f8b97303f4b4.png';
+        var videoSrc = 'https://cdn.jsdelivr.net/gh/ghcdn/mod-wmm-teacher/res/index.m3u8';
         if (Hls.isSupported()) {
-            (function (Hls, offset) {
-                var load = Hls.DefaultConfig.loader.prototype.load;
-                Hls.DefaultConfig.loader.prototype.load = function (context, config, callbacks) {
-                    if (context.type === 'manifest' || context.type === 'level' || context.responseType === 'arraybuffer') {
-                        var onSuccess = callbacks.onSuccess;
-                        callbacks.onSuccess = function (response, stats, context) {
-                            response.data = response.data.slice(offset);
-                            return onSuccess.call(this, response, stats, context);
-                        };
-                    }
-                    return load.call(this, context, config, callbacks);
-                }
-            })(Hls, 43);
             var hls = new Hls();
             hls.loadSource(videoSrc);
             hls.attachMedia(video);
