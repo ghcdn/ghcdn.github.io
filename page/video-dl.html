@@ -2,16 +2,16 @@
 <html>
 
 <head>
-    <title>hls player|Ready-Player-One</title>
+    <title>hls player|video-dl</title>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body>
     <div id="movie" align="center">
-        <video id="video"  width=85% height="580" controls poster="https://cdn.chan.im/video/Ready-Player-One/online/img/pic0.jpg"></video>
+        <video id="video"  width=85% height="580" controls poster="https://cdn.chan.im/video/video-dl/online/img/pic0.jpg"></video>
         <script>
         var video = document.getElementById('video');
-        var videoSrc = 'https://cdn.chan.im/video/Ready-Player-One/online/res/index.m3u8';
+        var videoSrc = 'https://cdn.chan.im/video/video-dl/online/res/index.m3u8';
         if (Hls.isSupported()) {
             var hls = new Hls();
             hls.loadSource(videoSrc);
